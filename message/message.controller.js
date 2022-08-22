@@ -24,6 +24,7 @@ module.exports = {
     }
 
     res.status(201).json("Message saved");
+    customerCache = [];
     await messageModel.create(token, user, message);
   },
 };
