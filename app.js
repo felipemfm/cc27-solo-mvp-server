@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express();
 
+const messageController = require("./message/message.controller");
+
 require("dotenv").config({ path: ".env" });
 if (process.env.NODE_ENV === "development") {
   const morgan = require("morgan");
@@ -11,5 +13,8 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use(express.json());
+
+app.get("/", messageController.new);
+app.post("/", messageController.create);
 
 module.exports = app;
