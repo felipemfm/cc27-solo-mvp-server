@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config({ path: "./.env" });
 
 console.log(process.env.NODE_ENV);
 module.exports = {
