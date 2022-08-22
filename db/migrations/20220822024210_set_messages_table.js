@@ -5,8 +5,8 @@
 exports.up = async function (knex) {
   await knex.schema.createTable("message_data", (table) => {
     table.increments("id");
-    table.string("token", 64).notNullable();
-    table.string("user", 64).notNullable();
+    table.string("access_token", 64).notNullable();
+    table.string("user_name", 64).notNullable();
     table.text("message").notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now());
   });
@@ -17,5 +17,5 @@ exports.up = async function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = async function (knex) {
-  await knew.schema.dropTable("message_data");
+  await knex.schema.dropTable("message_data");
 };
