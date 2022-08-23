@@ -8,7 +8,6 @@
     "dev": "nodemon server.js",
     "migrate:latest": "npx knex migrate:up --knexfile db/knexfile.js",
     "migrate:rollback": "npx knex migrate:down --knexfile db/knexfile.js"
-
   },
   "author": "felipemfm",
   "license": "ISC",
