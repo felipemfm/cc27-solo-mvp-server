@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", messageController.new);
-app.post("/", messageController.create);
+app.get("/api/", messageController.new);
+app.post("/api/", messageController.create);
 
 module.exports = app;
