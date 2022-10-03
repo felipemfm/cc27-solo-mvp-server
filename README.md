@@ -1,5 +1,5 @@
-# FireChat
-The backend for this project can be find [here](https://github.com/felipemfm/cc27-solo-mvp-server).
+# FireChat - Server
+The frontend for this project can be find [here](https://github.com/felipemfm/fire-chat).
 ## About
 
 FireChat is a chat room application designed to offer anonymous confirmation between various user. 
@@ -11,17 +11,26 @@ Is recommended that both Server and Client folder to be placed inside the same d
 
  - Create a .env file inside the root folder and add the following:
 ```
-	NODE_ENV=development  
-	REACT_APP_LOCAL_SERVER=http://localhost:[Server localhost PORT]/api/
-	REACT_APP_DEPLOY_SERVER=/api/  
-	BUILD_PATH=[Server directory folder path]\server\build
+	NODE_ENV=development
+	DB_NAME=[DB NAME]
+	DB_USER=[USER NAME]
+	DB_PASSWORD=[DB PASSWORD]
 ```
- - Install modules with yarn and run the build script
+ - Install modules 
 ```
-	yarn install
-	yarn run build
+	npm install
 ```
+ - Run db migration script
+```
+	npm run migrate:latest
+```
+ - If the build folder is not present, got to the client directory and run the build script
+ - Run the dev script to start the server with nodemon
+ ```
+ 	npm run dev
+ ```
 ## Technologies
- - JavaScript
- - React
- - TypeScript
+ - Node.js
+ - Express
+ - Knex.js
+ - PorstgreSQL
